@@ -1,0 +1,40 @@
+# observer_problem.rb
+# class Order
+#   attr_reader :status, :user_email, :user_phone
+
+#   def initialize(user_email, user_phone)
+#     @user_email = user_email
+#     @user_phone = user_phone
+#     @status = "pending"
+#   end
+
+#   def confirm!
+#     @status = "confirmed"
+
+#     # Direct side effects — tightly coupled
+#     send_email
+#     send_sms
+#     update_dashboard
+#   end
+
+#   private
+
+#   def send_email
+#     puts "Email sent to #{@user_email}"
+#   end
+
+#   def send_sms
+#     puts "SMS sent to #{@user_phone}"
+#   end
+
+#   def update_dashboard
+#     puts "Dashboard updated"
+#   end
+# end
+
+
+
+
+# # Usage with simple notification center
+# order_simple_notification = Order.new("user@example.com", "123-456-7890")
+# order_simple_notification.confirm!
