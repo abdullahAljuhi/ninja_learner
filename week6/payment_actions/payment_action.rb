@@ -9,10 +9,7 @@ class PaymentAction
   }.freeze
 
   def initialize
-    base_url = ENV['PAYMENT_BASE_URL'] || 'https://payments.example.com'
-    api_key = ENV['PAYMENT_API_KEY']
     @client = PaymentGatewayClient.instance
-    @client.configure(base_url: base_url, api_key: api_key)
   end
 
   def call(*args)

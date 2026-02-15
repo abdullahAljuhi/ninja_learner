@@ -9,6 +9,10 @@ class Main
   ENV['PAYMENT_API_KEY'] = 'test_api_key_123'
 
   def self.run
+    base_url = ENV['PAYMENT_BASE_URL'] || 'https://payments.example.com'
+    api_key = ENV['PAYMENT_API_KEY']
+    PaymentGatewayClient.instance.configure(base_url: base_url, api_key: api_key)
+
     charge_action = ChargeCustomer.new
     charge_action.call('customer_123', 100)
 
